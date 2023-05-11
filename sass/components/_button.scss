@@ -1,0 +1,74 @@
+.btn {
+  width: 160px;
+  min-height: 40px;
+  padding: 10px 17px;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  color: var(--t-light-color);
+  background-color: transparent;
+
+  border: 1px solid var(--br-accent-color);
+  border-radius: 25px;
+
+  transition: color var(--trans), background-color var(--trans);
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--bg-accent-color);
+    // color: var(--t-light-color);
+  }
+}
+
+.btn--on-light {
+  color: var(--t-main-color);
+  transition: color var(--trans), background-color var(--trans);
+
+  &:hover,
+  &:focus {
+    background-color: var(--bg-accent-color);
+    color: var(--t-light-color);
+  }
+}
+
+.btn--center {
+  display: block;
+  margin: 0 auto;
+}
+
+.btn__icon {
+  margin-top: 30px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: blue;
+  background-color: rgb(255, 232, 127);
+  transition: color 1s, background-color 1s;
+
+  &:hover {
+    color: red;
+    background-color: aqua;
+  }
+}
+
+.btn__icon-icon {
+  stroke: blue;
+  // stroke: currentColor;
+  fill: none;
+  // fill: currentColor;
+}
+
+.btn__icon:hover .btn__icon-icon {
+  stroke: red;
+  // stroke: currentColor;
+  fill: none;
+  // fill: currentColor;
+}

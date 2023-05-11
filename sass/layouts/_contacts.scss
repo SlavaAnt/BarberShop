@@ -1,0 +1,60 @@
+.contacts {
+  @include section;
+
+  @media screen and (min-width: $desktop) {
+    padding-left: 100px;
+  }
+
+  &__address {
+    @extend %address;
+
+    width: 270px;
+    margin-bottom: 70px;
+  }
+
+  &__list {
+    @extend %list;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    @extend %link;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--t-grey-2-color);
+
+    &--bold {
+      font-weight: 700;
+      align-items: flex-start;
+    }
+  }
+
+  &__icon {
+    fill: none;
+    stroke: var(--t-grey-2-color);
+
+    &--bold {
+      margin-top: 3px;
+    }
+  }
+
+  &__uppertitle {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    text-transform: uppercase;
+
+    color: var(--t-light-color);
+    margin-bottom: 20px;
+  }
+
+  &__schedule {
+    color: var(--t-grey-2-color);
+    // text-style from _base.scss
+    line-height: calc(30 / 18);
+  }
+}

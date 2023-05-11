@@ -1,0 +1,51 @@
+.header {
+  // position: fixed;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%; //для розміщення на всій ширині екрану
+
+  @media screen and (max-width: ($tablet - 1)) {
+    padding: 40px 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contact {
+  @media screen and (max-width: ($tablet - 1)) {
+    display: none;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    // gap: 40px;
+  }
+
+  &__link {
+    @extend %link;
+
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+      display: inline-block;
+      padding: 52px 0;
+      margin-right: 40px;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: calc(16 / 12);
+      letter-spacing: 0.1em;
+      color: var(--t-light-color);
+
+      &:hover,
+      &:focus {
+        color: var(--t-accent-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.nav {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    margin-right: auto;
+  }
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+    @media screen and (min-width: $tablet) {
+      gap: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+      gap: 30px;
+    }
+  }
+
+  &__link {
+    @extend %link;
+
+    display: inline-block;
+    padding: 52px 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    letter-spacing: 0.1em;
+    color: var(--t-light-color);
+    transition: color var(--trans), letter-spacing var(--trans);
+
+    &:hover,
+    &:focus {
+      color: var(--t-accent-color);
+      letter-spacing: 0.2em;
+    }
+  }
+}

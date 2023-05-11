@@ -1,0 +1,55 @@
+:root {
+  /* Font families */
+  --main-font: 'Open Sans', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+
+  /* Text colors */
+  --t-main-color: #303030;
+  --t-light-color: #ffffff;
+  --t-accent-color: #ff6c00;
+  --t-grey-1-color-60: rgba(157, 164, 189, 0.6);
+  --t-grey-2-color: #9da4bd;
+  --t-grey-3-color: #555555;
+  // --t-secondary-color: #757575;
+
+  /* Icons */
+  //   --i-main-color: #afb1b8;
+  //   --i-secondary-color: #757575;
+  //   --i--white-color: #ffffff;
+
+  /* Background colors*/
+  --bg-main-color: #ffffff;
+  --bg-accent-color: #ff6c00;
+  --bg-dark-color: #191c26;
+  --bg-light-color: #f7f7f7;
+  --bg-grey-2-color: #9da4bd;
+  // --bg-grey-1-color-60: rgba(157, 164, 189, 0.6);
+  --bg-accent-color-60: rgb(255, 108, 0, 0.6);
+  --bg-dark-color-2: #212121;
+
+  --bg-grey-color-20: rgba(25, 28, 38, 0.2);
+
+  /* Border colors*/
+  --br-light-color: #ffffff;
+  --br-grey-2-color: #9da4bd;
+  --br-accent-color: #ff6c00;
+  --br-grey-color-input: rgba(157, 164, 189, 0.4);
+
+  /* Cards */
+  --items: 1;
+  --indent: 30px;
+
+  /* Animations */
+  --trans-fast: 400ms ease 0ms;
+  --trans-slow: 800ms easy-in 0ms;
+  --trans: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // --trans: 2s;
+}
+
+/* Breackpoints */
+$mobile: 480px;
+// width container = 418+2*15 = 448px
+$tablet: 768px;
+// width container = 690+2*15 = 720px
+$desktop: 1200px;
+// container = 1170+2*15 = 1200px

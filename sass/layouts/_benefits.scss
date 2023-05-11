@@ -1,0 +1,127 @@
+.benefits {
+  @include section;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__group {
+    margin-bottom: 44px;
+
+    @media screen and (min-width: $tablet) {
+      width: 500px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__uppertitle {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    letter-spacing: 0.02em;
+    line-height: calc(30 / 18);
+    color: var(--t-grey-3-color);
+  }
+
+  // Benefits list
+  &__list {
+    @extend %list;
+    display: flex;
+    // flex-basis: 370px;
+
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 450px;
+      margin: 0 0 0 240px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: 370px;
+      margin: 0 130px 0 100px;
+    }
+    // gap: 30px;
+
+    // margin-right: 130px;
+  }
+
+  &__item {
+    flex-basis: 193px;
+    min-height: 133px;
+
+    padding: 20px 35px;
+
+    text-align: center;
+    background-color: var(--bg-light-color);
+
+    @media screen and (max-width: ($mobile - 1)) {
+      flex-basis: 120px;
+      padding: 10px 10px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      flex-basis: 210px;
+      padding: 20px 44px;
+    }
+    @media screen and (min-width: $desktop) {
+      flex-basis: 170px;
+      padding: 20px 24px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    // margin-bottom: 30px;
+  }
+
+  &__item:nth-child(2n) {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  &__quantity {
+    position: relative;
+    display: inline-block; // <p> блочний елемент, займає всю ширину, індекс притискається не до меж контенту, а меж блоку; потрібно зробити рядковим!
+    font-weight: 700;
+    font-size: 42px;
+    line-height: calc(57 / 42);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  &__quantity-sup {
+    position: absolute;
+    top: 7px;
+    right: -15px;
+    // top: 0;
+    // right: 0;
+    // transform: translate(15px, 7px);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: calc(22 / 16);
+    text-align: center;
+    color: var(--t-accent-color);
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+.container {
+  // max-width: 480px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $mobile) {
+    //ширина вьюпорту (breakpoint)
+    width: 448px; //ширина контейнеру
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 720px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 1200px;
+  }
+}

@@ -1,0 +1,181 @@
+.hero {
+  // Image-fon for mobile
+  @media screen and (max-width: $mobile) {
+    background-color: var(--bg-grey-color-20);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../image/hero/hero-bg_m@1x.jpg);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../image/hero/hero-bg_m@2x.jpg);
+    }
+  }
+
+  // @media screen and (max-width: ($tablet - 1)) {
+  //   background-color: var(--bg-grey-color-20);
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-image: url(../image/hero/hero-bg_t@1x.jpg);
+
+  //   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  //     background-image: url(../image/hero/hero-bg_t@2x.jpg);
+  //   }
+  // }
+
+  &__container {
+    // max-width: $desktop;
+    // outline: 1px solid red;
+
+    @media screen and (min-width: $tablet) {
+      padding: 0;
+      display: flex;
+      position: relative;
+    }
+  }
+
+  // Left side
+  &__left-side {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      width: 100px;
+    }
+  }
+
+  // Right side
+  &__right-side {
+    padding: 208px 113px 208px 0;
+    // outline: 1px solid violet;
+
+    // Image-fon for tablet
+    @media screen and (min-width: ($mobile + 1)) {
+      flex-grow: 1;
+      background-color: var(--bg-grey-color-20);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../../image/hero/hero-bg_t@1x.jpg);
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url(../../image/hero/hero-bg_t@2x.jpg);
+      }
+    }
+
+    // Image-fon for desktop
+    @media screen and (min-width: ($tablet + 1)) {
+      background-image: url(../../image/hero/hero-bg_d@1x.jpg);
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url(../../image/hero/hero-bg_d@2x.jpg);
+      }
+    }
+
+    @media screen and (max-width: ($mobile - 1)) {
+      padding-right: 20px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      padding: 272px 110px 237px 100px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 272px 526px 208px 100px;
+    }
+  }
+
+  // Main title
+  &__maintitle {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: calc(56 / 48);
+    letter-spacing: 0.05em;
+    color: var(--t-light-color);
+    margin-bottom: 20px;
+
+    animation: title-animation-mobile 2000ms ease-in 100ms 1 both;
+
+    @media screen and (max-width: ($mobile - 1)) {
+      font-size: 44px;
+      width: 240px;
+      animation: title-animation-mobile-320 2000ms ease-in 100ms 1 both;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 72px;
+      line-height: calc(85 / 72);
+      animation: title-animation 2000ms ease-in 100ms 1 both;
+    }
+  }
+
+  @keyframes title-animation {
+    0% {
+      opacity: 0;
+      transform-origin: top left;
+      transform: scale(0.2);
+    }
+    50% {
+      transform: translateX(40px) scale(1.2);
+      color: var(--t-accent-color);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes title-animation-mobile {
+    0% {
+      opacity: 0;
+      transform-origin: top left;
+      transform: scale(0.2);
+    }
+    50% {
+      transform: translateX(40px) scale(1.1);
+      color: var(--t-accent-color);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes title-animation-mobile-320 {
+    0% {
+      opacity: 0;
+      transform-origin: top left;
+      transform: scale(0.2);
+    }
+    50% {
+      transform: translateY(20px) scale(1.1);
+      color: var(--t-accent-color);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: calc(26 / 16);
+    width: 336px;
+    color: var(--t-grey-1-color-60);
+
+    @media screen and (max-width: ($mobile - 1)) {
+      font-size: 13px;
+      width: 280px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      font-size: 18px;
+      line-height: calc(30 / 18);
+      width: 360px;
+    }
+  }
+}

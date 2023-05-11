@@ -1,0 +1,75 @@
+// Кнопки перемикання сторінок
+.slider-btn {
+  @extend %list;
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 40px 0;
+  }
+
+  //   &__item {
+  //   }
+
+  &__btn {
+    font-family: inherit;
+    font-size: 11px;
+    line-height: calc(15 / 11);
+
+    // text-align: right;
+    letter-spacing: 0.1em;
+
+    color: var(--t-light-color);
+    background-color: transparent;
+    min-width: 60px;
+    border: none;
+    border-bottom: 1px solid var(--br-light-color);
+    padding: 0 0 8px;
+  }
+
+  &__item:first-child &__btn {
+    text-align: start;
+  }
+  &__item:last-child &__btn {
+    text-align: end;
+  }
+
+  &__btn.slider-btn__btn--disabled {
+    color: var(--t-grey-1-color-60);
+    border-bottom: 1px solid var(--t-grey-1-color-60);
+  }
+}
+
+// Пагінація
+.slider-pagination {
+  @extend %list;
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    top: calc(50% - 18px);
+    right: 20px;
+  }
+
+  &__item {
+    width: 8px;
+    height: 2px;
+    background-color: var(--bg-grey-2-color);
+    margin-left: auto;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &__item.slider-pagination__item--active {
+    width: 18px;
+    height: 2px;
+    background-color: var(--bg-main-color);
+  }
+}

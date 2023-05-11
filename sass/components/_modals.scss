@@ -1,0 +1,224 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: visibility 1s, opacity 1s;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  min-height: 609px;
+  background-color: var(--bg-light-color);
+  border-radius: 20px;
+  padding: 40px;
+
+  @media screen and (max-width: ($mobile - 1)) {
+    width: calc(100% - 30px);
+    padding: 40px 20px;
+  }
+}
+
+.modal__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 30;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--br-grey-2-color);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border var(--trans), fill var(--trans);
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  border: 1px solid var(--br-accent-color);
+}
+.modal__btn:hover .modal__btn-close,
+.modal__btn:focus .modal__btn-close {
+  fill: var(--br-accent-color);
+}
+
+// Форма
+.register-form {
+  &__title {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: calc(30 / 20);
+    letter-spacing: 0.05em;
+
+    display: block;
+    text-align: center;
+    margin-bottom: 12px;
+
+    color: var(--t-main-color);
+  }
+
+  &__field {
+    position: relative;
+    // font-weight: 600;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+
+    display: block;
+    margin-bottom: 22px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 38px;
+    outline: transparent;
+    border: 1px solid var(--br-grey-2-color);
+    border-radius: 8px;
+    transition: border-color var(--trans);
+  }
+
+  &__input:focus {
+    border-color: var(--br-accent-color);
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 38px;
+    transition: transform var(--trans);
+  }
+
+  &__input:focus + &__label,
+  &__input:not(:placeholder-shown) + &__label {
+    transform: translate(-38px, -260%);
+  }
+
+  &__input:focus ~ &__icon {
+    fill: var(--t-accent-color);
+  }
+
+  &__input::placeholder {
+    opacity: 0;
+    transition: opacity var(--trans);
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.01em;
+    color: var(--t-grey-1-color-60);
+  }
+  &__input:focus::placeholder {
+    opacity: 1;
+  }
+
+  &__icon {
+    position: absolute;
+    // bottom: 11px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // Коментарі
+  &__message-field {
+    position: relative;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+
+    display: block;
+    margin-bottom: 32px;
+  }
+  &__message-textarea {
+    resize: none;
+    width: 100%;
+    height: 120px;
+    // display: block;
+    padding: 10px;
+    outline: transparent;
+    border: 1px solid var(--br-grey-2-color);
+    border-radius: 8px;
+    transition: border-color var(--trans);
+  }
+  &__message-textarea:focus {
+    border: 1px solid var(--br-accent-color);
+  }
+  &__message-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: transform var(--trans);
+  }
+
+  &__message-textarea::placeholder {
+    opacity: 0;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.01em;
+    color: var(--t-grey-1-color-60);
+  }
+  &__message-textarea:focus + &__message-label,
+  &__message-textarea:not(:placeholder-shown) + &__message-label {
+    transform: translate(-10px, -190%);
+  }
+
+  &__message-textarea:focus::placeholder {
+    opacity: 1;
+  }
+
+  // Чекбокс - згода
+  &__agreement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.03em;
+  }
+
+  &__agreement-icon-checked {
+    fill: var(--bg-accent-color);
+    opacity: 0;
+    transition: opacity var(--trans);
+  }
+
+  &__agreement-icon-unchecked {
+    opacity: 1;
+    transition: opacity var(--trans);
+  }
+
+  &__checkbox:checked + &__agreement-icon &__agreement-icon-checked {
+    opacity: 1;
+  }
+  &__checkbox:checked + &__agreement-icon &__agreement-icon-unchecked {
+    opacity: 0;
+  }
+
+  &__checkbox:focus + &__agreement-icon {
+    outline: 1px solid var(--br-accent-color);
+    // outline-offset: 1px;
+    border-radius: 4px;
+  }
+  &__agreement-description {
+    font-size: 10.5px;
+    user-select: none;
+  }
+}

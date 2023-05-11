@@ -1,0 +1,183 @@
+.group__section {
+  max-width: $desktop;
+  margin: 0 auto;
+  background-color: var(--bg-dark-color);
+
+  background-image: url(../image/contacts/contacts-bg_m-@1x.png);
+  background-repeat: no-repeat;
+  // background-position: left calc(50% + 1 / 2 * 785px) top;
+  background-size: 100% 50%;
+  background-position: center bottom;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url(../image/contacts/contacts-bg_m-@2x.png);
+    // background-position: left calc(50% + 1 / 2 * 785px) top;
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: url(../image/contacts/contacts-bg_t-@1x.png);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../image/contacts/contacts-bg_t-@2x.png);
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    background-position: center right;
+    background-size: contain;
+    background-image: url(../image/contacts/contacts-bg_d-@1x.png);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../image/contacts/contacts-bg_d-@2x.png);
+    }
+  }
+}
+.group__container {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.booking {
+  @include section;
+
+  @media screen and (min-width: $desktop) {
+    width: 570px;
+  }
+
+  &__form {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--t-grey-1-color-60);
+    // gap: 44px 30px;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 44px 30px;
+      // column-gap: 30px;
+      // row-gap: 44px;
+    }
+  }
+
+  &__form-field {
+    position: relative;
+    // display: flex;
+    // gap: 30px;
+    @media screen and (max-width: ($tablet - 1)) {
+      display: block;
+      margin-bottom: 44px;
+    }
+  }
+
+  &__form-input {
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--t-grey-1-color-60);
+    background-color: transparent;
+    width: 100%;
+    height: 24px;
+    border: none;
+    border-bottom: 1px solid var(--br-grey-color-input);
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: border-bottom-color var(--trans), color var(--trans), opacity var(--trans);
+
+    @media screen and (min-width: $tablet) {
+      width: 330px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 270px;
+    }
+  }
+
+  &__form-input::placeholder {
+    opacity: 0;
+    transition: opacity var(--trans);
+  }
+
+  &__form-input:hover::placeholder,
+  &__form-input:focus::placeholder {
+    opacity: 1;
+  }
+  // &__form-input:not(:placeholder-shown) + &__form-label {
+  //   color: var(--t-light-color);
+  // }
+
+  &__form-input:hover,
+  &__form-input:focus {
+    outline: transparent;
+    border-bottom-color: var(--t-light-color);
+    color: var(--t-light-color);
+    opacity: 1;
+    // outline: 1px solid var(--bg-accent-color);
+    // outline-offset: 2px;
+  }
+
+  &__form-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform var(--trans), color var(--trans);
+  }
+
+  &__form-input:hover + &__form-label,
+  &__form-input:focus + &__form-label {
+    color: var(--t-light-color);
+    transform: translateY(-100%);
+  }
+
+  &__form-input:not(:placeholder-shown) + &__form-label {
+    color: var(--t-grey-1-color-60);
+    transform: translateY(-100%);
+  }
+
+  // Message
+  &__form-message {
+    position: relative;
+    display: block;
+    margin-bottom: 44px;
+
+    @media screen and (min-width: $tablet) {
+      width: 100%;
+    }
+  }
+  &__form-message-textaria {
+    font-size: 11px;
+    line-height: calc(15 / 11);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--t-grey-1-color-60);
+    resize: none;
+    width: 100%;
+    height: 76px;
+    border: none;
+    border-bottom: 1px solid var(--br-grey-color-input);
+    background-color: transparent;
+    padding: 20px 0 0;
+    margin: 0;
+    transition: border-bottom-color var(--trans), color var(--trans), opacity var(--trans);
+  }
+  &__form-message-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: color var(--trans);
+  }
+
+  &__form-message-textaria:hover,
+  &__form-message-textaria:focus {
+    border-bottom-color: var(--t-light-color);
+    outline: transparent;
+  }
+
+  &__form-message-textaria:hover + &__form-message-label,
+  &__form-message-textaria:focus + &__form-message-label {
+    color: var(--t-light-color);
+  }
+}
