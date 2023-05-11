@@ -59,19 +59,19 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      background-image: url(../../image/hero/hero-bg_t@1x.jpg);
+      background-image: url(../image/hero/hero-bg_t@1x.jpg);
 
       @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-        background-image: url(../../image/hero/hero-bg_t@2x.jpg);
+        background-image: url(../image/hero/hero-bg_t@2x.jpg);
       }
     }
 
     // Image-fon for desktop
     @media screen and (min-width: ($tablet + 1)) {
-      background-image: url(../../image/hero/hero-bg_d@1x.jpg);
+      background-image: url(../image/hero/hero-bg_d@1x.jpg);
 
       @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-        background-image: url(../../image/hero/hero-bg_d@2x.jpg);
+        background-image: url(../image/hero/hero-bg_d@2x.jpg);
       }
     }
 

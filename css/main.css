@@ -330,22 +330,22 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../../image/hero/hero-bg_t@1x.jpg);
+    background-image: url(../image/hero/hero-bg_t@1x.jpg);
   }
 }
 @media screen and (min-width: 481px) and (min-device-pixel-ratio: 2), screen and (min-width: 481px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 481px) and (min-resolution: 192dpi), screen and (min-width: 481px) and (min-resolution: 2dppx) {
   .hero__right-side {
-    background-image: url(../../image/hero/hero-bg_t@2x.jpg);
+    background-image: url(../image/hero/hero-bg_t@2x.jpg);
   }
 }
 @media screen and (min-width: 769px) {
   .hero__right-side {
-    background-image: url(../../image/hero/hero-bg_d@1x.jpg);
+    background-image: url(../image/hero/hero-bg_d@1x.jpg);
   }
 }
 @media screen and (min-width: 769px) and (min-device-pixel-ratio: 2), screen and (min-width: 769px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 769px) and (min-resolution: 192dpi), screen and (min-width: 769px) and (min-resolution: 2dppx) {
   .hero__right-side {
-    background-image: url(../../image/hero/hero-bg_d@2x.jpg);
+    background-image: url(../image/hero/hero-bg_d@2x.jpg);
   }
 }
 @media screen and (max-width: 479px) {
